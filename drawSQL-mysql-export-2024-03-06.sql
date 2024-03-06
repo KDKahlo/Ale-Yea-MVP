@@ -1,15 +1,3 @@
---
--- Drop Tables
---
-
-SET foreign_key_checks = 0;
-DROP TABLE if exists students;
-SET foreign_key_checks = 1;
-
---
--- Create Tables
---
-
 CREATE TABLE `berlin-breweries`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `brewery name` VARCHAR(255) NOT NULL,
