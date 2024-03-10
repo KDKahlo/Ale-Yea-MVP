@@ -29,7 +29,7 @@ router.get("/breweries", async (req, res) => {
 //get breweries by id
 router.get("/breweries/:id", async (req, res) => {
   const {id} = req.params;
-  // Send back the full list of breweries
+  // Send back brewery selected by id
   console.log('reached the endpoint')
   try {
     const query =`SELECT * FROM breweries WHERE id = ${id};`;
@@ -63,7 +63,7 @@ router.get("/craftbeers", async (req, res) => {
 //api in postman needs to be structured like this ---->  localhost:4000/craftbeers/your flavor choice here 
 router.get("/craftbeers/:flavor", async (req, res) => {
   const {flavor} = req.params;
-  // Send back the full list of craftbeers
+  // Send back list of craftbeers with selected flavor
   console.log('reached the endpoint')
   try {
     const query =`SELECT * FROM craftbeers WHERE flavor LIKE '%${flavor}%';`;
@@ -76,4 +76,21 @@ router.get("/craftbeers/:flavor", async (req, res) => {
     res.status(500).send(err);
   }
 });
+//get breweries by location
+router.get("/breweries/:location", async (req, res) => {
+  const {location} = req.params;
+ 
+  console.log('reached the endpoint')
+  try {
+    const query =`SELECT * FROM breweries WHERE location = '${location}';`;
+    const results = await db(query);
+    //console.log(`The results are: ${results}`);
+    res.send(results.data);
+    
+  } catch (err) {
+    console.error("Error occurred:", err);
+    res.status(500).send(err);
+  }
+});
+
 module.exports = router;
