@@ -98,4 +98,21 @@ router.get("/craftbeers/:flavor", async (req, res) => {
 });
 
 
+//get craftbeers by type_style 
+router.get("/craftbeers/:type_style", async (req, res) => {
+  const {type_style} = req.params;
+  // Send back list of craftbeers with selected flavor
+  console.log('reached the endpoint')
+  try {
+    const typeQuery =`SELECT * FROM craftbeers WHERE type_style LIKE '%${type_style}%';`;
+    const typeResults = await db(typeQuery);
+    //console.log(`The results are: ${results}`);
+    res.send(typeResults.data);
+    
+  } catch (err) {
+    console.error("Error occurred:", err);
+    res.status(500).send(err);
+  }
+});
+
 module.exports = router;
