@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Home from "./components/Home";
 import "./App.css";
 import { Routes, Route} from "react-router-dom"
@@ -10,15 +9,15 @@ import { Routes, Route} from "react-router-dom"
 
 
 
-function App() {
+export default function App() {
   
 
   return (
     <>
-    <div className="appHeader">
+    {/* <div className="appHeader">
     <img className="appLogo" src="images/AppLogo.png" alt= "logo of app title with 2 beer mugs toasting"/>
    <h1 className="appTitle"> ALE YEA! CRAFTBEER ME!</h1>
-   </div>
+   </div> */}
      <nav>
 
     <ul>
@@ -41,4 +40,4 @@ function App() {
   )
 }
 
-export default App
+

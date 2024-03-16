@@ -1,0 +1,94 @@
+
+  body {
+    font-family: "Archivo Black", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.logo {
+    text-align: center;
+    padding-top: 50px;
+}
+.orange-box {
+    background-color: orange;
+    border: solid 1px orange;
+    padding: 0px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+}
+.image-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.image-box {
+    padding: 10px;
+}
+.image-text {
+    background-color: orange;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+}
+/* .separator-line {
+    border-top: 1px solid rgb(147, 144, 144);
+    margin-top: 20px;
+} */
+.craft-beer-section {
+    margin-top: 20px;
+    text-align: center;
+    color: grey;
+}
+.ale-venture-button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.separator-line::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid lightgrey;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.empty-box {
+    width: 80px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+    background-color: lightgrey;
+    margin-top: 10px;
+    opacity: 0.5; /* Adjust opacity as needed */
+}
+.empty-box2 {
+    width: 80px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+    background-color: lightgrey;
+    margin-top: 10px;
+    margin-left: 120px;
+    opacity: 0.5; /* Adjust opacity as needed */
+}
+Center content
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
