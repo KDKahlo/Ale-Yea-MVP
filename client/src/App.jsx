@@ -1,44 +1,42 @@
 import { useState } from 'react'
 import Home from "./components/Home";
-import Aleventure from "./components/AleVenture";
-import AleYea from "./components/AleYea";
-import CraftbeerMe from "./components/CraftbeerMe";
-import Page404 from "./components/Page404";
+import "./App.css";
+import { Routes, Route} from "react-router-dom"
+// import Aleventure from "./components/AleVenture";
+// import AleYea from "./components/AleYea";
+// import CraftbeerMe from "./components/CraftbeerMe";
+// import Page404 from "./components/Page404";
 
-import './App.css'
+
+
 
 function App() {
   
 
   return (
     <>
-    <h1>Ale Yea! Craftbeer Me!</h1>
+    <div className="appHeader">
+    <img className="appLogo" src="images/AppLogo.png" alt= "logo of app title with 2 beer mugs toasting"/>
+   <h1 className="appTitle"> ALE YEA! CRAFTBEER ME!</h1>
+   </div>
      <nav>
 
     <ul>
-      <li>
-        <Link>Aleventure</Link>
-      </li>
-      <li>
+     
+      {/* <li>
         <Link>AleYea</Link>
       </li>
       <li>
         <Link>CraftbeerMe</Link> 
-      </li>
+      </li> */}
     </ul>
 
      </nav>
     <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/aleventure" element={<Aleventure />}>
-    <Route path="/aleventure/aleyea" element={<Aleventure />} />
-    </Route>
-    <Route path="*" element={<Page404 />} />
-    
-
-
-
-    </Routes>
+   
+       </Routes>
+      
     </>
   )
 }
