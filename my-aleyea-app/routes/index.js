@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const db = require("../model/helper");
 
 
@@ -99,20 +99,64 @@ router.get("/craftbeers/:flavor", async (req, res) => {
 
 
 //get craftbeers by type_style 
-router.get("/craftbeers/:type_style", async (req, res) => {
-  const {type_style} = req.params;
-  // Send back list of craftbeers with selected flavor
-  console.log('reached the endpoint')
-  try {
-    const typeQuery =`SELECT * FROM craftbeers WHERE type_style LIKE '%${type_style}%';`;
-    const typeResults = await db(typeQuery);
-    //console.log(`The results are: ${results}`);
-    res.send(typeResults.data);
+// router.get("/craftbeers/:type_style", async (req, res) => {
+//   const {type_style} = req.params;
+//   // Send back list of craftbeers with selected flavor
+//   console.log('reached the endpoint')
+//   try {
+//     const typeQuery =`SELECT * FROM craftbeers WHERE type_style LIKE '%${type_style}%';`;
+//     const typeResults = await db(typeQuery);
+//     //console.log(`The results are: ${results}`);
+//     res.send(typeResults.data);
     
+//   } catch (err) {
+//     console.error("Error occurred:", err);
+//     res.status(500).send(err);
+//   }
+// });
+const validateData = (data) => {
+  return data && data.answer1 && data.answer2 && data.answer3;
+};
+
+// Use the craft beers router
+router.post("/craftbeers/recommendations", async (req, res) => {
+  // Get quiz answers from the request body
+  const { answer1, answer2, answer3 } = req.body;
+  console.log(`'this is my req.body'${req.body}`);
+
+  // Validate the incoming data
+  if (!validateData(req.body)) {
+    return res.status(400)({ error: 'Please provide answers to all quiz questions' });
+  }
+  
+  try {
+    const results1 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer1}%' ORDER BY RAND() LIMIT 1`);
+    const results2 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer2}%' ORDER BY RAND() LIMIT 1`);
+    
+    let query3;
+    if (answer3 === 'low') {
+      query3 = `SELECT * FROM craftbeers WHERE ABV <= 5 ORDER BY RAND() LIMIT 1`;
+    } else if (answer3 === 'high') {
+      query3 = `SELECT * FROM craftbeers WHERE ABV >= 7 ORDER BY RAND() LIMIT 1`;
+    } else {
+      return res.status(400).json({ error: 'Invalid answer for ABV range' });
+    }
+
+    const results3 = await db(query3);
+
+    const response = {
+      beer1: results1[0],
+      beer2: results2[0],
+      beer3: results3[0]
+    };
+
+    res.json(response);
+
   } catch (err) {
-    console.error("Error occurred:", err);
-    res.status(500).send(err);
+    console.error(err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 
 module.exports = router;
