@@ -115,6 +115,7 @@ router.get("/craftbeers/:flavor", async (req, res) => {
 //   }
 // });
 const validateData = (data) => {
+  console.log(data.answer1,data.answer2,data.answer3);
   return data && data.answer1 && data.answer2 && data.answer3;
 };
 
@@ -132,7 +133,7 @@ router.post("/craftbeers/recommendations", async (req, res) => {
   try {
     const results1 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer1}%' ORDER BY RAND() LIMIT 1`);
     const results2 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer2}%' ORDER BY RAND() LIMIT 1`);
-    
+    console.log(`These are the results for 1& 2 ONLY: ${results1}, ${results2},`);
     let query3;
     if (answer3 === 'low') {
       query3 = `SELECT * FROM craftbeers WHERE ABV <= 5 ORDER BY RAND() LIMIT 1`;
@@ -141,15 +142,16 @@ router.post("/craftbeers/recommendations", async (req, res) => {
     } else {
       return res.status(400).json({ error: 'Invalid answer for ABV range' });
     }
-
+    
     const results3 = await db(query3);
 
+  console.log(`These are the results for 1,2,3: ${results1}, ${results2}, ${results3}`);
     const response = {
       beer1: results1[0],
       beer2: results2[0],
       beer3: results3[0]
     };
-
+    console.log(`'This is my response: ${response}`);
     res.json(response);
 
   } catch (err) {
