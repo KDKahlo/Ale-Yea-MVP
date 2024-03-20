@@ -84,22 +84,30 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
   return (
     <>
       <div className="CraftbeerMe">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/AleYea">Ale Yea!</Link>
-            </li>
-            <li>
-              <Link to="/AleVenture">Ale-Venture</Link>
-            </li>
-            <li>
-              <Link to="/CraftbeerMe">CraftbeerMe</Link>
-            </li>
-          </ul>
-        </nav>
+        {/* Navbar */}
+        <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+           
+            <ul class="nav">
+                <li class="nav-item">
+                     <Link class="nav-link"  to="/">HOME</Link>
+                </li>
+                <li class="nav-item">
+                     <Link class="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" to="/AleYea">ALE-YEA!</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
+                </li>
+            </ul> 
+           
+          </a>
+        </div>
+      </nav> 
         <div className="container">
           <label>
             "Imagine this: Your taste buds have had a rollercoaster of a day, 
