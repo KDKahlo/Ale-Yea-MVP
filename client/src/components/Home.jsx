@@ -17,17 +17,17 @@ function Home() {
             <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
            
             <ul class="nav">
-                <li class="nav-item">
-                     <Link class="nav-link"  to="/">HOME</Link>
+                <li className="nav-item">
+                     <Link className="nav-link"  to="/">HOME</Link>
                 </li>
                 <li class="nav-item">
-                     <Link class="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
+                     <Link className="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
                 </li>
                 <li class="nav-item">
-                    <Link class="nav-link" to="/AleYea">ALE-YEA!</Link>
+                    <Link className="nav-link" to="/AleYea">ALE-YEA!</Link>
                 </li>
                 <li class="nav-item">
-                    <Link class="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
+                    <Link className="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
                 </li>
             </ul> 
            

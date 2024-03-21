@@ -11,8 +11,23 @@ import Page404 from "./components/Page404";
 
 
 export default function App() {
-
+  const [flavor, setFlavor] = useState(''); 
   const [recommendations, setRecommendations] = useState([]);
+  const [error, setError] = useState('');
+
+  const fetchFlavorRecommendations = async (flavor) => {
+    try {
+      const response = await fetch(`/craftbeers/${flavor}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch beer recommendations');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw new Error('No beers found with that flavor. Please try another flavor.');
+    }
+  };
 
   useEffect(() => {
     // Fetch recommendations when the component mounts
@@ -48,7 +63,9 @@ export default function App() {
         <Route path="*" element={<Page404 />} />
       </Routes>
 
-    
+      <AleYea fetchFlavorRecommendations={fetchFlavorRecommendations} setError={setError} flavor={flavor} error={error} />
+
+      <input type="text" value={flavor} onChange={(e) => setFlavor(e.target.value)} />
     </>
   );
 }

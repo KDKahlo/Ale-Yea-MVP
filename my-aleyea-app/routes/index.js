@@ -86,7 +86,7 @@ router.get("/craftbeers/:flavor", async (req, res) => {
   // Send back list of craftbeers with selected flavor
   console.log('reached the endpoint')
   try {
-    const query =`SELECT * FROM craftbeers WHERE flavor LIKE '%${flavor}%';`;
+    const query =`SELECT * FROM craftbeers WHERE flavor LIKE '%${flavor}%'ORDER BY RAND() LIMIT 5;`;
     const results = await db(query);
     //console.log(`The results are: ${results}`);
     res.send(results.data);
@@ -115,7 +115,7 @@ router.get("/craftbeers/:flavor", async (req, res) => {
 //   }
 // });
 const validateData = (data) => {
-  console.log(data.answer1,data.answer2,data.answer3);
+  // console.log(data.answer1,data.answer2,data.answer3);
   return data && data.answer1 && data.answer2 && data.answer3;
 };
 
@@ -123,40 +123,51 @@ const validateData = (data) => {
 router.post("/craftbeers/recommendations", async (req, res) => {
   // Get quiz answers from the request body
   const { answer1, answer2, answer3 } = req.body;
-  console.log(`'this is my req.body'${req.body}`);
+  // console.log(`'this is my req.body'${req.body}`);
 
   // Validate the incoming data
   if (!validateData(req.body)) {
-    return res.status(400)({ error: 'Please provide answers to all quiz questions' });
+    return res.status(400).send({ error: 'Please provide answers to all quiz questions' });
   }
   
   try {
     const results1 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer1}%' ORDER BY RAND() LIMIT 1`);
+    res.send(results1);
+    const finalResult1 = results1.data;
+  
+
     const results2 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer2}%' ORDER BY RAND() LIMIT 1`);
-    console.log(`These are the results for 1& 2 ONLY: ${results1}, ${results2},`);
+    res.send(results2);
+    const finalResult2 = results2.data;
+
+    console.log(`*********These are the results 1: ${results1.data} `);
     let query3;
     if (answer3 === 'low') {
       query3 = `SELECT * FROM craftbeers WHERE ABV <= 5 ORDER BY RAND() LIMIT 1`;
+      res.send(query3);
+      const finalResult3 = results3.data;
     } else if (answer3 === 'high') {
       query3 = `SELECT * FROM craftbeers WHERE ABV >= 7 ORDER BY RAND() LIMIT 1`;
+      res.send(query3);
+      const finalResult3 = results3.data;
     } else {
-      return res.status(400).json({ error: 'Invalid answer for ABV range' });
+      return res.status(400).send({ error: 'Invalid answer for ABV range' });
     }
     
     const results3 = await db(query3);
 
-  console.log(`These are the results for 1,2,3: ${results1}, ${results2}, ${results3}`);
+  // console.log(`These are the results for 1,2,3: ${results1}, ${results2}, ${results3}`);
     const response = {
       beer1: results1[0],
       beer2: results2[0],
       beer3: results3[0]
     };
-    console.log(`'This is my response: ${response}`);
-    res.json(response);
+    // console.log(`'This is my response: ${response}`);
+    res.send(response);
 
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).send({ error: 'Internal server error' });
   }
 });
 
