@@ -80,7 +80,7 @@ router.get("/craftbeers", async (req, res) => {
   }
 });
 //get back list of craftbeer according to the flavor
-//api in postman needs to be structured like this ---->  localhost:4000/craftbeers/YOUR FLAVOR HERE 
+//api in postman needs to be structured like this ---->  localhost:4000/api/craftbeers/YOUR FLAVOR HERE 
 router.get("/craftbeers/:flavor", async (req, res) => {
   const {flavor} = req.params;
   // Send back list of craftbeers with selected flavor

@@ -37,13 +37,6 @@ export default function App() {
       const response = await fetch(`/api/craftbeers/${flavor}`);
       console.log('this is my fetch response for fetchFlavorRecommendations:', response);
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch beer recommendations');
-      }
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
-        throw new Error('Response is not in JSON format');
-      }
       const data = await response.json();
       console.log(data)
       return data;
@@ -52,6 +45,10 @@ export default function App() {
       throw new Error('Failed to fetch beer recommendations. Please try again.');
     }
   };
+
+
+
+  
   //code for custom quiz with 3 questions for the user.
   const fetchRecommendations = async () => {
     try {
@@ -64,7 +61,7 @@ export default function App() {
         throw new Error('Response is not in JSON format');
       }
       const data = await response.json();
-      setRecommendations(data);
+      // setQuizRecommendations(data);
     } catch (error) {
       // console.error(error);
       // Handle error, you can set error state here or display a notification to the user
@@ -106,7 +103,7 @@ export default function App() {
 
   useEffect(() => {
     // Fetch recommendations when the component mounts
-    fetchRecommendations();
+    // fetchRecommendations();
   }, []);
 
   return (

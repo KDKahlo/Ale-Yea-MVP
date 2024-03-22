@@ -10,16 +10,9 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
     e.preventDefault();
     try {
       const response = await fetchFlavorRecommendations(inputValue);
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
-      const contentType = response.headers.get('content-type');
-      console.log('******this is my contentType' `${contentType}`);
-      if (!contentType || !contentType.includes('application/json')) {
-        throw new Error('Response is not in JSON format');
-      }
-      const data = await response.json();
-      setRecommendations(data);
+        console.log(response.data);
+      setRecommendations(response.data);
+    
     } catch (error) {
       setError('No beers found with that flavor. Please try another flavor.');
       console.error(error);
