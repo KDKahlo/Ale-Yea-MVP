@@ -5,16 +5,39 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
   const [recommendations, setRecommendations] = useState([]);
   const [inputValue, setInputValue] = useState(''); // Renamed flavor state variable to inputValue
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(`${inputValue}`);
-      const data = await fetchFlavorRecommendations(inputValue);
+      const response = await fetchFlavorRecommendations(inputValue);
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const contentType = response.headers.get('content-type');
+      console.log('******this is my contentType' `${contentType}`);
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error('Response is not in JSON format');
+      }
+      const data = await response.json();
       setRecommendations(data);
     } catch (error) {
       setError('No beers found with that flavor. Please try another flavor.');
+      console.error(error);
     }
   };
+  
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     console.log(`${inputValue}`);
+  //     const data = await fetchFlavorRecommendations(inputValue);
+  //     setRecommendations(data);
+  //     console.log('This is my data:' `${data}`)
+  //   } catch (error) {
+  //     setError('No beers found with that flavor. Please try another flavor.');
+  //   }
+  // };
 
   return (
     <div className="AleYea">
