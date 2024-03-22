@@ -15,30 +15,7 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor })
   };
     return (
         <div className="AleYea">
-              {/* Navbar */}
-        <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
-           
-            <ul className="nav">
-                <li className="nav-item">
-                     <Link className="nav-link"  to="/">HOME</Link>
-                </li>
-                <li className="nav-item">
-                     <Link className="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/AleYea">ALE-YEA!</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
-                </li>
-            </ul> 
-           
-          </a>
-        </div>
-      </nav> 
+           <NavBar/>
             <h1>Ale Yea!</h1>
             <div>
       <form onSubmit={handleSubmit}>
