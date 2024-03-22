@@ -11,27 +11,27 @@ function Home() {
         <div className="background-container">
 
         {/* Navbar */}
-        <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+        <nav className="navbar bg-body-tertiary">
+        <div className="container-fluid">
+         
+            <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
            
-            <ul class="nav">
+            <ul className="nav">
                 <li className="nav-item">
                      <Link className="nav-link"  to="/">HOME</Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                      <Link className="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                     <Link className="nav-link" to="/AleYea">ALE-YEA!</Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                     <Link className="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
                 </li>
             </ul> 
            
-          </a>
+        
         </div>
       </nav> 
         
@@ -39,15 +39,15 @@ function Home() {
 
 
 
-        <div id="carouselExampleCaptions" class="carousel slide">
+        <div id="carouselExampleCaptions" className="carousel slide">
         <div className="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div className="carousel-inner" >
           <div className="carousel-item active" data-bs-interval="100">
-            <img src="images/photo-1615332579037-3c44b3660b53.avif" class="d-block w-100"   alt="..."/>
+            <img src="images/photo-1615332579037-3c44b3660b53.avif" className="d-block w-100"   alt="..."/>
             <div className="carousel-caption d-none d-md-block">
               <h5>LET THE ALE-VENTURE BEGIN!</h5>
               <p> Craft beer isn't just a beverage. It's a masterpiece in a pint glass!
@@ -57,7 +57,7 @@ function Home() {
             </div>
           </div>
           <div className="carousel-item" data-bs-interval="100">
-            <img src="images/photo-1505075106905-fb052892c116.avif" class="d-block w-100"  alt="..."/>
+            <img src="images/photo-1505075106905-fb052892c116.avif" className="d-block w-100"  alt="..."/>
             <div className="carousel-caption d-none d-md-block">
               <h5>CRAFTBEER ME!</h5> 
               <p>Alright, time to pick your flavor adventure! Are you feeling sweet like caramel, 
@@ -69,7 +69,7 @@ function Home() {
             </div>
           </div>
           <div className="carousel-item">
-            <img src="\images\photo-1584225064785-c62a8b43d148.avif" class="d-block w-100" alt="..."/>
+            <img src="\images\photo-1584225064785-c62a8b43d148.avif" className="d-block w-100" alt="..."/>
             <div className="carousel-caption d-none d-md-block">
               <h5>ALE-YEA I KNOW MY BREW!</h5>
               <p>Craft Beer Connoisseurs, take the express lane to your brew haven! With a swift search,
@@ -79,11 +79,11 @@ function Home() {
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
