@@ -1,20 +1,19 @@
+
 import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import "./components/App.css";
-import { Routes, Route, Link} from "react-router-dom"
 import CraftbeerMe from "./components/CraftbeerMe";
 import AleVenture from "./components/AleVenture";
 import AleYea from "./components/AleYea";
 import Page404 from "./components/Page404";
+import { FlavorProvider } from "./FlavorContext";
 
-
-
-
-export default function App() {
-  const [flavor, setFlavor] = useState(''); 
+function App() {
   const [recommendations, setRecommendations] = useState([]);
   const [error, setError] = useState('');
+  const [flavor, setFlavor] = useState(''); // Define flavor state
 
+  // for filter by flavor in AleYea.jsx
   const fetchFlavorRecommendations = async (flavor) => {
     try {
       const response = await fetch(`/craftbeers/${flavor}`);
@@ -34,6 +33,7 @@ export default function App() {
     fetchRecommendations();
   }, []);
 
+  // for customized recommendations in CraftbeerMe.jsx
   const fetchRecommendations = async () => {
     try {
       const response = await fetch('/craftbeers/recommendations');
@@ -44,30 +44,26 @@ export default function App() {
       // Assuming the response is an array of recommendations
       setRecommendations(data);
     } catch (error) {
-      console.error(error);
+      // Handle error
     }
   };
 
-
-
-
   return (
-    <>
-    
-
+    <FlavorProvider> {/* Wrap your entire application with FlavorProvider */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/CraftbeerMe" element={<CraftbeerMe recommendations={recommendations} />} />
-        <Route path="/AleYea" element={<AleYea />} />
+        <Route path="/CraftbeerMe" element={<CraftbeerMe />} />
+        <Route
+          path="/AleYea"
+          element={<AleYea flavor={flavor} />} // Pass flavor as a prop to AleYea
+        />
         <Route path="/AleVenture" element={<AleVenture />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-
-      <AleYea fetchFlavorRecommendations={fetchFlavorRecommendations} setError={setError} flavor={flavor} error={error} />
-
-      <input type="text" value={flavor} onChange={(e) => setFlavor(e.target.value)} />
-    </>
+    </FlavorProvider>
   );
 }
+
+export default App;
 
 

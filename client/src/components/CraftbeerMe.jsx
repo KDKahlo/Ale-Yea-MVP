@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./CraftbeerMe.css";
 
-export default function CraftbeerMe({ recommendation1, recommendation2, recommendation3 }) {
-
-  const [answer1, setAnswer1] = useState('');
-  const [answer2, setAnswer2] = useState('');
-  const [answer3, setAnswer3] = useState('');
-  const [recommendations, setRecommendations] = useState([]);
+// export default function CraftbeerMe({ recommendation1, recommendation2, recommendation3 }) {
+  export default function CraftbeerMe() {
+  const [answer1, setAnswer1] = useState('coconut');
+  const [answer2, setAnswer2] = useState('caramel');
+  const [answer3, setAnswer3] = useState('high');
+  const [recommendations, setRecommendations] = useState();
 
   const flavors1 = ['fruity', 'hoppy', 'spicy', 'pineapple', 'lychee', 'raspberry', 'apple', 'tart', 'tropical', 'mango', 'tangerines', 'bitter', 'passionfruit', 'citrus', 'orange', 'grapefruit', 'coconut', 'guava'];
   const flavors2 = ['chocolate', 'vanilla', 'cinnamon', 'caramel', 'cocoa', 'marshmallow', 'coffee', 'toffee', 'biscuits', 'honey', 'bread', 'sour', 'woody', 'nutty', 'lime', 'pumpkin', 'cloves', 'floral', 'malty'];
@@ -28,64 +28,60 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
 //Reasoning:
 // (It's especially useful when you're dealing with nested objects and want to access a property deep
 // within the object structure without encountering errors if any intermediate property is undefined.)
-  const beerRecommendations = [
-    {
-      name: recommendation1?.beername,
-      description: recommendation1?.description,
-      image_url: recommendation1?.image_url,
-      breweryname: recommendation1?.breweryname,
-      breweryurl: recommendation1?.breweryurl,
-    },
-    {
-      name: recommendation2?.beername,
-      description: recommendation2?.description,
-      image_url: recommendation2?.image_url,
-      breweryname: recommendation2?.breweryname,
-      breweryurl: recommendation2?.breweryurl,
-    },
-    {
-      name: recommendation3?.beername,
-      description: recommendation3?.description,
-      image_url: recommendation3?.image_url,
-      breweryname: recommendation3?.breweryname,
-      breweryurl: recommendation3?.breweryurl,
-    }
-  ];
+  // const beerRecommendations = [
+  //   {
+  //     name: recommendation1?.beername,
+  //     description: recommendation1?.description,
+  //     image_url: recommendation1?.image_url,
+  //     breweryname: recommendation1?.breweryname,
+  //     breweryurl: recommendation1?.breweryurl,
+  //   },
+  //   {
+  //     name: recommendation2?.beername,
+  //     description: recommendation2?.description,
+  //     image_url: recommendation2?.image_url,
+  //     breweryname: recommendation2?.breweryname,
+  //     breweryurl: recommendation2?.breweryurl,
+  //   },
+  //   {
+  //     name: recommendation3?.beername,
+  //     description: recommendation3?.description,
+  //     image_url: recommendation3?.image_url,
+  //     breweryname: recommendation3?.breweryname,
+  //     breweryurl: recommendation3?.breweryurl,
+  //   }
+  // ];
   
   const submitQuiz = async () => {
-    try {
-      const response = await fetch('/craftbeers/recommendations', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          answer1,
-          answer2,
-          answer3
-        })
-      });
+  // console.log("Entering the function")
+  // console.log(`/craftbeers/${answer1}`)
+      const response1 = await fetch(`/craftbeers/${answer1}`);
+     
+       // -> the url would be the api endpoint
+          
+        
+      //  const recommendation1 = await response1.json();
+       console.log(response1.data);
+       setRecommendations(response1);
+       
+      // if (!response.ok) {
+      //   throw new Error('Failed to fetch recommendations');
+      // }
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch recommendations');
-      }
-
-      const data = await response.json();
-      setRecommendations(data);
-    } catch (error) {
-      console.error(error);
-    }
+      // const data = await response.json();
+      // setRecommendations(data);
+   
   };
 
   useEffect(() => {
-   
+   submitQuiz();
   }, []); 
 
   return (
-    <>
+    
       <div className="CraftbeerMe">
-        {/* Navbar */}
-        <nav class="navbar bg-body-tertiary">
+  
+        {/* <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
@@ -143,7 +139,6 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
 
           <button onClick={submitQuiz}>Submit</button>
 
-          {/* Recommendations */}
           {recommendations.length > 0 && (
             <div>
               <h2>Recommendations</h2>
@@ -162,8 +157,8 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
               </ul>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
-    </>
+    
   );
 }
