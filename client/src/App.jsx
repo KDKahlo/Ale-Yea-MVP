@@ -6,7 +6,11 @@ import CraftbeerMe from "./components/CraftbeerMe";
 import AleVenture from "./components/AleVenture";
 import AleYea from "./components/AleYea";
 import Page404 from "./components/Page404";
-import { FlavorProvider } from "./FlavorContext";
+import { FlavorProvider } from "routes/FlavorContext";
+
+
+
+
 
 function App() {
   const [recommendations, setRecommendations] = useState([]);

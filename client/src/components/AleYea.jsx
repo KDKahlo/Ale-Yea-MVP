@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import { useFlavor } from "./FlavorContext";
+import { FlavorProvider } from "./routes/FlavorContext";
+
+
+
+
 
 export default function AleYea({ fetchFlavorRecommendations, setError }) {
   const { flavor, setFlavor } = useFlavor();
