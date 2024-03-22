@@ -85,27 +85,27 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
     <>
       <div className="CraftbeerMe">
         {/* Navbar */}
-        <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+        <nav className="navbar bg-body-tertiary">
+        <div className="container-fluid">
+         
+            <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
            
-            <ul class="nav">
-                <li class="nav-item">
-                     <Link class="nav-link"  to="/">HOME</Link>
+            <ul className="nav">
+                <li className="nav-item">
+                     <Link className="nav-link"  to="/">HOME</Link>
                 </li>
-                <li class="nav-item">
-                     <Link class="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
+                <li className="nav-item">
+                     <Link className="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
                 </li>
-                <li class="nav-item">
-                    <Link class="nav-link" to="/AleYea">ALE-YEA!</Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/AleYea">ALE-YEA!</Link>
                 </li>
-                <li class="nav-item">
-                    <Link class="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
+                <li className="nav-item">
+                    <Link className="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
                 </li>
             </ul> 
            
-          </a>
+        
         </div>
       </nav> 
         <div className="container">
