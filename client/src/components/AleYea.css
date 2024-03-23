@@ -57,33 +57,24 @@ div.beer-catalog {
     font-size: 13px;
    
   }
-  /* .image-label-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-  } */
-  /* .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  } */
+ /* css for flavor form */
   .container-flavor-choice-and-title  {
-    width:250%;
-    min-height:10rem;
-    
-    display:absolute;
-    text-align:center;
-    margin:auto;
-    margin-top:2rem;
-    margin-left:10rem;
-    padding:5rem;
-    padding-bottom: 5rem;
-    border-radius:10%;
-    background:rgba(154, 150, 41, 0.33);
-    box-shadow: 0 0 10px #000;
+    width: 50%;
+    position: fixed; /* Fixed positioning */
+    margin-left: 400px;
+    margin-top: 5px;
+    text-align: center;
+    padding-top: 2rem; /* Adjust padding */
+    background: rgba(154, 150, 41, 0.33);
+    box-shadow: 0 0 35px #000;
+    border-radius: 25px;
   }
+  .form-control {
+    width: 50%;
+    margin-left: 250px;
+  }
+  
+
 /* css for beers returned to user */
 body {
     padding: 40px 0;
@@ -101,19 +92,19 @@ body {
   .grid > article {
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-    padding-top: 15px;
-    margin-top: 25px;
+    padding: 20px;
+    margin-top: 450px;
   }
   
   .grid > article img {
     padding-top: 10px;
-    margin-left: 50px;
+    margin-left: 40px;
     max-width: 100%;
  
   }
   
   .grid .text {
-    padding: 20px;
+    padding: 10px;
     margin-left: 30px;
     margin-right: 15px;
   }

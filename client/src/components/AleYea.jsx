@@ -67,7 +67,7 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
       </div>
 
   <div className = "flavor-form">
-     <form className= "row g-5 " onSubmit={handleSubmit}>
+     <form onSubmit={handleSubmit}>
   
 
     <div className = "" id = "label-input-button">
@@ -93,6 +93,7 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
          {error && <p>{error}</p>}
   </div>
 </div>
+
  <div className= "container">  
   <main className = "grid">
           {recommendations.map((beer) => (
@@ -105,6 +106,7 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
         <div className="text">
            <h3>{beer.beername}</h3>
            <p>{beer.description}</p>
+         
         </div>
           
        
