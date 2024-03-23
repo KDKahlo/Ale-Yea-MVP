@@ -85,29 +85,31 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
     <>
       <div className="CraftbeerMe">
         {/* Navbar */}
-        <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
-         
+        <div className="navBar ">
+        <div className = " bg-warning-subtle text-warning-emphasis position-absolute row col-sm-12">
+        <nav className="navbar bg-body-tertiary p-3 mb-2 bg-warning-subtle text-warning-emphasis fixed-top">
+        <div className="container-fluid p-3 mb-2 bg-warning-subtle text-warning-emphasis">
+          <div className="appLogoImg" >
             <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
-           
-            <ul className="nav">
-                <li className="nav-item">
-                     <Link className="nav-link"  to="/">HOME</Link>
+           </div>
+            <ul className="nav p-3 mb-2 bg-warning-subtle text-warning-emphasis">
+                <li className="">
+                     <Link className="nav-link text-body-tertiary"  to="/">HOME</Link>
                 </li>
                 <li className="nav-item">
-                     <Link className="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
+                     <Link className="nav-link text-body-tertiary" to="/AleVenture">ALE-VENTURE!</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/AleYea">ALE-YEA!</Link>
+                    <Link className="nav-link text-body-tertiary" to="/AleYea">ALE-YEA!</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
+                    <Link className="nav-link text-body-tertiary"to="/CraftbeerMe">CRAFTBEER ME!</Link>
                 </li>
-            </ul> 
-           
-        
+            </ul>
         </div>
       </nav> 
+       </div>
+        </div>
         <div className="container">
           <label>
             "Imagine this: Your taste buds have had a rollercoaster of a day, 

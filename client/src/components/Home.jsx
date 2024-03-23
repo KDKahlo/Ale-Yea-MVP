@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { Routes, Route, Link} from "react-router-dom"
-import AleVenture from "./AleVenture";
+
 
 
 function Home() {
@@ -9,9 +9,9 @@ function Home() {
 
      
         
-        <div className="background-container">
+        <div className="background-container mt-0">
           <div className = "headerSection">
-        <img   className = "headerSection z-0 position-absolute" src="\images\Ale-Yea-Background-right.png"/> 
+        {/* <img   className = "headerSection z-0 position-absolute" src="\images\Ale-Yea-Background-right.png"/>  */}
           </div>
         {/* Navbar */}
         <div className="navBar ">
@@ -95,7 +95,7 @@ function Home() {
      
       </div>
      
-
+    
 </div> 
      
     );
