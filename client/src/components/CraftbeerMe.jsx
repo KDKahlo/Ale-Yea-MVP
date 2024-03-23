@@ -140,8 +140,8 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
             "If you were at a party and had to choose between dancing on the table or being the table, which would you pick?
             Are you more of a 'lightweight limbo dancer' or a 'brew-proof bunker'?"
           </label>
-          <button onClick={() => handleAnswer3Click('low')}>Lightweight limbo dancer</button>
-          <button onClick={() => handleAnswer3Click('high')}>Party Table Fortress</button>
+          {/* <input type="checkbox" onClick={() => handleAnswer3Click('low')}>Lightweight limbo dancer</input>
+          <input type="checkbox" onClick={() => handleAnswer3Click('high')}>Party Table Fortress</input> */}
 
           <button onClick={submitQuiz}>Submit</button>
 

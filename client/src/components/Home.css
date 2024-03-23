@@ -4,15 +4,28 @@ body {
   background: radial-gradient(circle, rgba(224,176,41,1) 0%, rgba(221,110,6,0.9808298319327731) 100%);
 }
 
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.protest-strike-regular {
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .carousel {
     width: 50%;
-    margin-left: 150px;
+    margin-left: 350px;
     padding-left: 50px;
   }
 
   .carousel-item img {
-    width:  30%;
-    height: 30%; /* Maintain aspect ratio */
+    width:  50%;
+    height: 50%;
+
   }
   
 .appLogoImg {

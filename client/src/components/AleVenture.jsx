@@ -39,10 +39,10 @@ export default function AleVenture(){
         </div>
 
 
-        <div class="container fixed-bottom">
+        <div className="container fixed-bottom">
      <div className="row">
      <div className="col-md-6">
-       <div className="card" style={{ width: "18rem" }}>
+       <div className="card" style={{ width: "20rem" }}>
          <img
            src="images/photo-1623937228271-992646fb0fba.avif"
            className="card-img-top"
@@ -61,7 +61,7 @@ export default function AleVenture(){
 
      <div className="row">
      <div className="col-md-6" >
-       <div className="card" style={{ width: "18rem" }}>
+       <div className="card" style={{ width: "20rem" }}>
          <img
            src="images/photo-1584225064785-c62a8b43d148.avif"
            className="card-img-top"
