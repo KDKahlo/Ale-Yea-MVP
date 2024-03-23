@@ -47,7 +47,7 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
                      <Link className="nav-link text-body-tertiary"  to="/">HOME</Link>
                 </li>
                 <li className="nav-item">
-                     <Link className="nav-link text-body-tertiary" to="/AleVenture">ALE-VENTURE!</Link>
+                     <Link className="nav-link text-body-tertiary " to="/AleVenture">ALE-VENTURE!</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-body-tertiary" to="/AleYea">ALE-YEA!</Link>

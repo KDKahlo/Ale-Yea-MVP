@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { Routes, Route, Link} from "react-router-dom"
-import NavBar from "./NavBar";
+import AleVenture from "./AleVenture";
 
 
 function Home() {
@@ -10,9 +10,9 @@ function Home() {
      
         
         <div className="background-container">
-          {/* <div className = "headerSection">
+          <div className = "headerSection">
         <img   className = "headerSection z-0 position-absolute" src="\images\Ale-Yea-Background-right.png"/> 
-          </div> */}
+          </div>
         {/* Navbar */}
         <div className="navBar ">
         <div className = " bg-warning-subtle text-warning-emphasis position-absolute row col-sm-12">
@@ -57,7 +57,7 @@ function Home() {
               <p> Craft beer isn't just a beverage. It's a masterpiece in a pint glass!
                 Get ready to sip on the liquid artistry that is craft beer!
                 Before we start this ale-tastic journey, lets look at what makes this experience so unique.</p>
-                <Link to="/AleVenture">HOP ON OVER TO ALE-VENTURE!</Link>
+                <Link to="/AleVenture" className="text-white-50">HOP ON OVER TO ALE-VENTURE!</Link>
             </div>
           </div>
           <div className="carousel-item" data-bs-interval="100">
@@ -69,7 +69,7 @@ function Home() {
                  or perhaps creamy like a milkshake that brings all the folks to the yard? 
                 Then dive into the flavorful world of craft beer with
                 our custom quiz and find your the perfect match.</p>
-                <Link to="/CraftbeerMe">HOP ON OVER TO CRAFTBEER ME!</Link>
+                <Link to="/CraftbeerMe "  className="text-white-50">HOP ON OVER TO CRAFTBEER ME!</Link>
             </div>
           </div>
           <div className="carousel-item">
@@ -79,7 +79,7 @@ function Home() {
               <p>Craft Beer Connoisseurs, take the express lane to your brew haven! With a swift search,
                  dive into your favorite flavors or scout local sips nearby.
                  No more wild goose chases—just hoppy adventures await with a quick tap on ALE-YEA. 🍻</p>
-                 <Link to="/AleYea">HOP ON OVER TO ALE-YEA!</Link>                 
+                 <Link to="/AleYea"  className="text-white-50">HOP ON OVER TO ALE-YEA!</Link>                 
             </div>
           </div>
         </div>
@@ -95,29 +95,7 @@ function Home() {
      
       </div>
      
-      {/* <div class="container fixed-bottom">
-  <div class="row">
-    <div class="card"  style={{ width: '18rem' }}>
-      <img src="images/photo-1584225064785-c62a8b43d148.avif" class="card-img-top" alt="..."/>
-      <div class="card-body">
-        <h5 class="card-title">Best Craft Beer in Barcelona - 40 Bars and Taprooms!</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Feb 21, 2024</h6>
-        <p class="card-text">Barcelona is busting at the seams with places to wet your palette with some craft beers 40 to be exact!</p>
-        <a href="https://www.barcelonafoodexperience.com/blog/best-craft-beer-barcelona" class="card-link">Read more</a>
-      </div>
-    </div>
-  
-    <div class="card"  style={{ width: '18rem' }}>
-      <img src="images/photo-1623937228271-992646fb0fba.avif" class="card-img-top" alt="..."/>
-      <div class="card-body">
-        <h5 class="card-title">Our Favorite Bars For Craft Beer in Berlin</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Mar 16, 2024</h6>
-        <p class="card-text">Whether you live in Berlin or are visiting, here are some spots that will not disappoint!</p>
-        <a href="https://www.barcelonafoodexperience.com/blog/best-craft-beer-barcelona" class="card-link">Read more</a>
-      </div>
-    </div>
-  </div>
-</div>*/}
+
 </div> 
      
     );
