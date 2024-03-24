@@ -21,18 +21,6 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
   };
   
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     console.log(`${inputValue}`);
-  //     const data = await fetchFlavorRecommendations(inputValue);
-  //     setRecommendations(data);
-  //     console.log('This is my data:' `${data}`)
-  //   } catch (error) {
-  //     setError('No beers found with that flavor. Please try another flavor.');
-  //   }
-  // };
-
   return (
     <div className="AleYea">
       {/* Navbar */}
