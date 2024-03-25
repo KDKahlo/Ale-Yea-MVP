@@ -111,6 +111,7 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
        </div>
         </div>
         <div className="container">
+          <h1>CRAFTBEER ME!</h1>
           <label>
             "Imagine this: Your taste buds have had a rollercoaster of a day, 
             encountering the sour tang of lemonade stand mishaps, navigating through a jungle of tropical fruits,
@@ -140,8 +141,8 @@ export default function CraftbeerMe({ recommendation1, recommendation2, recommen
             "If you were at a party and had to choose between dancing on the table or being the table, which would you pick?
             Are you more of a 'lightweight limbo dancer' or a 'brew-proof bunker'?"
           </label>
-          {/* <input type="checkbox" onClick={() => handleAnswer3Click('low')}>Lightweight limbo dancer</input>
-          <input type="checkbox" onClick={() => handleAnswer3Click('high')}>Party Table Fortress</input> */}
+          <button  onClick={() => handleAnswer3Click('low')}>Lightweight limbo dancer</button>
+          <button type="checkbox" onClick={() => handleAnswer3Click('high')}>Party Table Fortress</button>
 
           <button onClick={submitQuiz}>Submit</button>
 
