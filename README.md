@@ -31,7 +31,7 @@ In case these dependencies are not installed, please run the following commands 
   can be found in the initial database file in the model folder.
 - Add a .env file to the project folder containing the MySQL authentication:
 - You can insert the data below to populate your craftbeer tables:
-INSERT INTO craftbeers (id, breweries_id, beername, flavor, type_style, ABV, color, description, guest_beer, image_url)
+- INSERT INTO craftbeers (id, breweries_id, beername, flavor, type_style, ABV, color, description, guest_beer, image_url)
 VALUES
 (1, 31, 'Vanilla Coffee Stout 2023', 'coffee,vanilla', 'Imperial Stout', 8, 'dark', 'Bourbon Barrel-Aged Imperial Stout w/ Coffee & Vanilla', 1, 'https://images.untp.beer/crop?width=640&height=640&stripmeta=true&url=https://untappd.s3.amazonaws.com/photos/2024_02_24/87443bd2b66fdbeec0c0642743a8badc_c_1358493293_raw.jpg'),
 (2, 23, 'Surfs Up', 'dry hopped', 'Hazy IPA', 6, 'Light Amber', 'Hazy IPA Dry-Hopped w/ Citra & Motueka', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXxu6_WlijOhUNjDZ3yefvXumaoV1RjY2Ltg&usqp=CAU'),
