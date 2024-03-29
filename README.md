@@ -23,15 +23,15 @@ In case these dependencies are not installed, please run the following commands 
 - `npm install nodemon`
 
 ### Database Migration
--cd into my-aleyea-app before installing dependencies or running npm start.
+-`cd my-aleyea-app` before installing dependencies or running `npm start`.
 - Access your MySQL interface
-- Create a new database for the craftbeers and breweries: CREATE DATABASE craftbeer;
+- Create a new database for the craftbeers and breweries: `CREATE DATABASE craftbeer;`
 - Ensure the 'migrate' script is within the package.json file
 - Run 'npm run migrate' to get a table called 'craftbeers' and 'breweries', which 
   can be found in the initial database file in the model folder.
 - Add a .env file to the project folder containing the MySQL authentication:
 - You can insert the data below to populate your craftbeer tables:
-- INSERT INTO craftbeers (id, breweries_id, beername, flavor, type_style, ABV, color, description, guest_beer, image_url)
+- `INSERT INTO craftbeers (id, breweries_id, beername, flavor, type_style, ABV, color, description, guest_beer, image_url)
 VALUES
 (1, 31, 'Vanilla Coffee Stout 2023', 'coffee,vanilla', 'Imperial Stout', 8, 'dark', 'Bourbon Barrel-Aged Imperial Stout w/ Coffee & Vanilla', 1, 'https://images.untp.beer/crop?width=640&height=640&stripmeta=true&url=https://untappd.s3.amazonaws.com/photos/2024_02_24/87443bd2b66fdbeec0c0642743a8badc_c_1358493293_raw.jpg'),
 (2, 23, 'Surfs Up', 'dry hopped', 'Hazy IPA', 6, 'Light Amber', 'Hazy IPA Dry-Hopped w/ Citra & Motueka', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXxu6_WlijOhUNjDZ3yefvXumaoV1RjY2Ltg&usqp=CAU'),
@@ -46,7 +46,7 @@ VALUES
 (12, 4, 'Hauptstadt Helles', 'fruity, floral, bitter', 'Pilsner', 5, 'light', 'This crisp, unconventional Helles is floral and lightly fruity with the clean, refreshing, bitter hop bite of a Northern Pilsner.', 0, 'https://www.bierlinie.de/images/stories/flexicontent/m_vagabund_hauptstadt_helles_0_33_l_bierflasche_mit_vollem_bierglas.jpg'),
 (13, 4, 'Sessionable Healing', 'citrus,fruity,tropical', 'IPA,Session', 5, 'medium', 'This Session IPA has a light, sensual body with bold aromas of tropical fruit, citrus peel and pine and a lower alcohol content to help you enjoy and feel good for longer.', 0, 'https://www.bierlinie.de/images/stories/flexicontent/l_vagabund_sessionable_healing_session_ipa_0_33_l_bierflasche_mit_vollem_bierglas.jpg'),
 (14, 4, 'Bindlestiff', 'caramel,tropical,fruity,malty,bitter', 'IPA', 6, 'light', 'This daring IPA rides the rails between fresh, aromatic tropical fruits and golden, caramel maltiness before moving on with a satisfyingly-bitter finish.', 0, 'https://www.bierlinie.de/images/stories/flexicontent/m_vagabund_bindlestiff_ipa_0_33_l_bierflasche_mit_vollem_bierglas.jpg'),
-(15, 4, 'Kottbusser', 'honey,spicy,malty,fruity', 'Wheat Beer', 5, 'medium', 'This historical hybrid beer recipe dates back to the early 1800s when small Berlin breweries brewed wheat, barley, and oats beers with honey, molasses, and even spices.', 0, 'https://www.bierlinie.de/images/stories/flexicontent/m_vagabund_kottbusser_0_33_l_bierflasche_mit_vollem_bierglas.jpg');
+(15, 4, 'Kottbusser', 'honey,spicy,malty,fruity', 'Wheat Beer', 5, 'medium', 'This historical hybrid beer recipe dates back to the early 1800s when small Berlin breweries brewed wheat, barley, and oats beers with honey, molasses, and even spices.', 0, 'https://www.bierlinie.de/images/stories/flexicontent/m_vagabund_kottbusser_0_33_l_bierflasche_mit_vollem_bierglas.jpg');`
 
 
 # index.js
