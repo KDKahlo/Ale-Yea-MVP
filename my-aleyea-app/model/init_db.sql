@@ -29,6 +29,5 @@ CREATE TABLE `craftbeers`(
     `image_url` VARCHAR(400) NOT NULL
 
 );
-CREATE TABLE `users`();
 ALTER TABLE
     `craftbeers` ADD CONSTRAINT `craftbeers_breweries_id_foreign` FOREIGN KEY(`breweries-id`) REFERENCES `breweries`(`id`);
