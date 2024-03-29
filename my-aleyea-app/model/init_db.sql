@@ -18,7 +18,7 @@ CREATE TABLE `breweries`(
 );
 CREATE TABLE `craftbeers`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `breweries-id` INT NOT NULL,
+    `breweries-id` BIGINT NOT NULL,
     `beername` VARCHAR(255) NOT NULL,
     `flavor` VARCHAR(255) NOT NULL,
     `type/style` VARCHAR(255) NOT NULL,
