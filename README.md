@@ -23,7 +23,7 @@ In case these dependencies are not installed, please run the following commands 
 - `npm install nodemon`
 
 ### Database Migration
-
+-cd into my-aleyea-app before installing dependencies or running npm start.
 - Access your MySQL interface
 - Create a new database for the craftbeers and breweries: CREATE DATABASE craftbeer;
 - Ensure the 'migrate' script is within the package.json file
