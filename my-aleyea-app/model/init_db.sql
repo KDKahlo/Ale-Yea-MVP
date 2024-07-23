@@ -26,8 +26,8 @@ CREATE TABLE `craftbeers`(
     `color` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NOT NULL
     `guest_beer` tinyint(1)  NOT NULL,
-    `image_url` VARCHAR(400) NOT NULL
+    `image_url` VARCHAR(255) NOT NULL
 
 );
-ALTER TABLE
-    `craftbeers` ADD CONSTRAINT `craftbeers_breweries_id_foreign` FOREIGN KEY(`breweries-id`) REFERENCES `breweries`(`id`);
+-- ALTER TABLE
+--     `craftbeers` ADD CONSTRAINT `craftbeers_breweries_id_foreign` FOREIGN KEY(`breweries-id`) REFERENCES `breweries`(`id`);
