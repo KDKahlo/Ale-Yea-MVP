@@ -24,9 +24,9 @@ CREATE TABLE `craftbeers` (
     `type_style` VARCHAR(255) NOT NULL,
     `ABV` INT NOT NULL,
     `color` VARCHAR(255) NOT NULL,
-    `description` VARCHAR(255) NOT NULL,
+    `description` TEXT NOT NULL,
     `guest_beer` TINYINT(1) NOT NULL,
-    `image_url` VARCHAR(400) NOT NULL
+    `image_url` TEXT NOT NULL
 );
 -- junction table to allow 1 brewerery to be linked to many craft beers and 1 craft beer to many breweries.
 CREATE TABLE `brewery_craftbeer` (
