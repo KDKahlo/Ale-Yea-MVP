@@ -52,7 +52,7 @@ export default function AleVenture(){
            <h5 className="card-title">Our Favorite Bars For Craft Beer in Berlin</h5>
            <h6 className="card-subtitle mb-2 text-body-secondary">Mar 16, 2024</h6>
            <p className="card-text">Whether you live in Berlin or are visiting, here are some spots that will not disappoint!</p>
-           <a href="https://www.barcelonafoodexperience.com/blog/best-craft-beer-barcelona" className="card-link">Read more</a>
+           <a href="https://theberlinlife.com/craft-beer-berlin/" className="card-link">Read more</a>
          
          </div>
        </div>
