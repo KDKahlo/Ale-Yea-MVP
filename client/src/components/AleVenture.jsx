@@ -69,13 +69,33 @@ export default function AleVenture(){
          />
          <div className="card-body">
            <h5 className="card-title">Best Craft Beer in Barcelona - 40 Bars and Taprooms!</h5>
-           <h6 className="card-subtitle mb-2 text-body-secondary">Mar 16, 2024</h6>
-           <p className="card-text">Whether you live in Berlin or are visiting, here are some spots that will not disappoint!</p>
+           <h6 className="card-subtitle mb-2 text-body-secondary">July 24, 2024</h6>
+           <p className="card-text">Barcelona is awesome for fans of craft beer! You can find great craftbeers in bars in any neighborhood you might find yourself, here are some spots to check out! </p>
            <a href="https://www.barcelonafoodexperience.com/blog/best-craft-beer-barcelona" className="card-link">Read more</a>
          </div>
        </div>
      </div>
      </div>
+
+     <div className="row">
+     <div className="col-md-6">
+       <div className="card" style={{ width: "20rem" }}>
+         <img
+           src="images\photo-1536638317175-32449deccfc0.avif"
+           className="card-img-top"
+           alt="..."
+         />
+         <div className="card-body">
+           <h5 className="card-title">The 8 Best Beers Made in the Valencian Community</h5>
+           <h6 className="card-subtitle mb-2 text-body-secondary">Jul 3, 2024</h6>
+           <p className="card-text">Authentic and local. These are 8 beers you will have to try when visiting Valencia!</p>
+           <a href="https://valenciasecreta.com/en/craft-beers-valencia/" className="card-link">Read more</a>
+         
+         </div>
+       </div>
+     </div>
+     </div>
+
     </div>
     </>
     ) 
