@@ -1,38 +1,53 @@
 import React from "react";
-import { Routes, Route, Link} from "react-router-dom"
+import "./NavBar.css";
+import { NavLink } from "react-router-dom";
 
-
-export default function NavBar(){
-
-return (
-    <>
-
- <nav className="navbar bg-body-tertiary">
- <div className="container-fluid">
-   
-     <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
-    
-     <ul className="nav">
-         <li className="nav-item">
-              <Link className="nav-link"  to="/">HOME</Link>
-         </li>
-         <li className="nav-item">
-              <Link className="nav-link" to="/AleVenture">ALE-VENTURE!</Link>
-         </li>
-         <li className="nav-item">
-             <Link className="nav-link" to="/AleYea">ALE-YEA!</Link>
-         </li>
-         <li className="nav-item">
-             <Link className="nav-link"to="/CraftbeerMe">CRAFTBEER ME!</Link>
-         </li>
-     </ul> 
-    
- 
- </div>
-</nav> 
-
- </>
-)}
-
-
- 
+export default function NavBar() {
+  return (
+    <nav className="navbar">
+      <div className="navbar__container">
+        <a className="navbar__brand">
+          <img src="\images\Ale-Yea-Updated-Logo.png" alt="Brand Logo" className="navbar__logo" />
+        </a>
+        
+        <div className="navbar__menu">
+          <ul className="navbar__list">
+            <li className="navbar__item">
+              <NavLink 
+                to="/" 
+                className={({ isActive }) => isActive ? "navbar__link navbar__link--active" : "navbar__link"}
+                end
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="navbar__item">
+              <NavLink 
+                to="/AleVenture" 
+                className={({ isActive }) => isActive ? "navbar__link navbar__link--active" : "navbar__link"}
+              >
+                AleVenture
+              </NavLink>
+            </li>
+            <li className="navbar__item">
+              <NavLink 
+                to="/AleYea" 
+                className={({ isActive }) => isActive ? "navbar__link navbar__link--active" : "navbar__link"}
+              >
+                Ale Yea
+              </NavLink>
+            </li>
+            <li className="navbar__item">
+              <NavLink 
+                to="/CraftbeerMe" 
+                className={({ isActive }) => isActive ? "navbar__link navbar__link--active" : "navbar__link"}
+              >
+                Craftbeer Me
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}

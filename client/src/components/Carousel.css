@@ -1,0 +1,51 @@
+/* RAW OVERWRITE CSS FILE - NEEDS A REVISIT */
+
+.carousel__images {
+    margin: 2rem 0;
+}
+
+.carousel {
+    margin: 2rem 1rem;
+}
+
+/* DESKTOP VIEWPORT */
+
+@media (min-width: 768px) {
+
+    .carousel__container {
+        position: relative; 
+    }
+    
+    .carousel__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        opacity: 0.5; 
+        z-index: 1; 
+        pointer-events: none;
+        display: none; /* currently disabled */
+    }
+
+    .carousel__slides {
+        position: relative; 
+        z-index: 2; 
+    
+    .carousel__images {
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+        height: auto;          
+        overflow: hidden;       
+        width: 100%;            
+        max-width: 800px;       
+        margin: 0 auto;   
+    }
+    
+    .carousel {
+        width: 100%;
+    }
+    }
+}
