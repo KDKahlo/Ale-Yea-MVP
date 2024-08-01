@@ -21,6 +21,7 @@ export default function App() {
       const data = await response.json();
       console.log(data)
       return data;
+      
     } catch (error) {
    
       throw new Error('Failed to fetch beer recommendations. Please try again.');

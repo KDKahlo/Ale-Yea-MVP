@@ -94,6 +94,8 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
         <div className="text">
            <h3>{beer.beername}</h3>
            <p>{beer.description}</p>
+           <p>Brewed by: <a href={beer.breweryurl}>{beer.breweryname}</a></p>
+            <p>Location: {beer.location}</p>
          
         </div>
           
