@@ -86,8 +86,16 @@ router.get("/craftbeers/:flavor", async (req, res) => {
   // Send back list of craftbeers with selected flavor
   console.log('reached the endpoint')
   try {
-     // Perform database query to fetch craft beers based on flavor
-    const query =`SELECT * FROM craftbeers WHERE flavor LIKE '%${flavor}%'ORDER BY RAND() LIMIT 5;`;
+     // Modified endpoint with a JOIN statement to get the breweries info for the craftbeers returned in the results.
+    // Perform database query to fetch craft beers based on flavor and join with breweries
+    const query = `
+      SELECT cb.*, b.*
+      FROM craftbeers cb
+      JOIN breweries b ON cb.breweries_id = b.id
+      WHERE cb.flavor LIKE '%${flavor}%'
+      ORDER BY RAND()
+      LIMIT 5;
+    `;
     const results = await db(query);
     console.log(`The results are: ${results}`);
     // Send JSON response with the fetched data

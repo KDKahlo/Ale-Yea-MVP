@@ -19,27 +19,9 @@ export default function App() {
       console.log('this is my fetch response for fetchFlavorRecommendations:', response);
 
       const craftbeerData = await response.json();
-      console.log( craftbeerData)
-       // Extract unique breweries_id values from the craftbeerData
-      const breweryIds = [...new Set(craftbeerData.map(item => item.breweries_id))];
-
-         // Fetch brewery information for each unique brewery_id
-         let breweryPromises = breweryIds.map(id => fetch(`/api/breweries/${id}`).then(res => res.json()));
-         let breweriesData = await Promise.all(breweryPromises);
-
-          // Create a map of brewery_id to brewery data for easy lookup
-        let breweryMap = {};
-        breweriesData.forEach(brewery => {
-            breweryMap[breweries.id] = brewery;
-          });
-
-          // Add brewery information to each craftbeer item
-          let craftbeerResult = craftbeerData.map(craftbeer => ({
-              ...craftbeer,
-              brewery: breweryMap[craftbeer.brewery_id]
-          }));
-
-      return  craftbeerResult;
+      console.log(craftbeerData)
+      
+      return  craftbeerData;
 
     } catch (error) {
    
