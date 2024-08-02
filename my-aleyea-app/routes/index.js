@@ -133,7 +133,7 @@ const validateData = (data) => {
 router.post("/craftbeers/recommendations", async (req, res) => {
   // Get quiz answers from the request body
   const { answer1, answer2, answer3 } = req.body;
-  // console.log(`'this is my req.body'${req.body}`);
+   console.log(`'this is my req.body'${req.body}`);
 
   // Validate the incoming data
   if (!validateData(req.body)) {
@@ -141,40 +141,28 @@ router.post("/craftbeers/recommendations", async (req, res) => {
   }
   
   try {
-    const results1 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer1}%' ORDER BY RAND() LIMIT 1`);
-    res.send(results1);
-    const finalResult1 = results1.data;
-  
-
-    const results2 = await db(`SELECT * FROM craftbeers WHERE flavor LIKE '%${answer2}%' ORDER BY RAND() LIMIT 1`);
-    res.send(results2);
-    const finalResult2 = results2.data;
-
-    console.log(`*********These are the results 1: ${results1.data} `);
-    let query3;
+    let abvCondition;
     if (answer3 === 'low') {
-      query3 = `SELECT * FROM craftbeers WHERE ABV <= 5 ORDER BY RAND() LIMIT 1`;
-      res.send(query3);
-      const finalResult3 = results3.data;
+      abvCondition = 'ABV <= 5';
     } else if (answer3 === 'high') {
-      query3 = `SELECT * FROM craftbeers WHERE ABV >= 7 ORDER BY RAND() LIMIT 1`;
-      res.send(query3);
-      const finalResult3 = results3.data;
+      abvCondition = 'ABV >= 6';
     } else {
       return res.status(400).send({ error: 'Invalid answer for ABV range' });
     }
+
+    const query = `
+      SELECT * FROM craftbeers
+      WHERE (flavor LIKE ? OR flavor LIKE ?)
+      AND ${abvCondition}
+      ORDER BY RAND()
+      LIMIT 2;
+    `;
+    const values = [`%${answer1}%`, `%${answer2}%`];
+    db.query(query, values, (err, results) => {
+      if (err) throw err;
+      res.json(results);
+    });
     
-    const results3 = await db(query3);
-
-  // console.log(`These are the results for 1,2,3: ${results1}, ${results2}, ${results3}`);
-    const response = {
-      beer1: results1[0],
-      beer2: results2[0],
-      beer3: results3[0]
-    };
-    // console.log(`'This is my response: ${response}`);
-    res.send(response);
-
   } catch (err) {
     console.error(err);
     res.status(500).send({ error: 'Internal server error' });
