@@ -1,31 +1,38 @@
 import React, { useState, useEffect } from "react";
 import Home from "./components/Home";
 import "./components/App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import CraftbeerMe from "./components/CraftbeerMe";
 import AleVenture from "./components/AleVenture";
 import AleYea from "./components/AleYea";
 import Page404 from "./components/Page404";
-import NavBar from "./components/NavBar"; // Importiere die Navbar-Komponente
 
 export default function App() {
   const [flavor, setFlavor] = useState('');
   const [recommendations, setRecommendations] = useState([]);
   const [error, setError] = useState('');
 
+ 
   const fetchFlavorRecommendations = async (flavor) => {
     try {
       const response = await fetch(`/api/craftbeers/${flavor}`);
       console.log('this is my fetch response for fetchFlavorRecommendations:', response);
 
-      const data = await response.json();
-      console.log(data);
-      return data;
+      const craftbeerData = await response.json();
+      console.log(craftbeerData)
+      
+      return  craftbeerData;
+
     } catch (error) {
+   
       throw new Error('Failed to fetch beer recommendations. Please try again.');
     }
   };
 
+
+
+  
+  //code for custom quiz with 3 questions for the user.
   const fetchRecommendations = async () => {
     try {
       const response = await fetch('/craftbeers/recommendation');
@@ -37,12 +44,17 @@ export default function App() {
         throw new Error('Response is not in JSON format');
       }
       const data = await response.json();
-      // Set recommendations state if needed
+     
     } catch (error) {
-      // Handle error
+     
     }
   };
+  
 
+
+
+
+  
   useEffect(() => {
     // Fetch recommendations when the component mounts
     // fetchRecommendations();
@@ -50,7 +62,6 @@ export default function App() {
 
   return (
     <>
-      <NavBar /> {/* Navbar global platzieren */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CraftbeerMe" element={<CraftbeerMe recommendations={recommendations} />} />
