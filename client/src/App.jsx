@@ -6,6 +6,7 @@ import CraftbeerMe from "./components/CraftbeerMe";
 import AleVenture from "./components/AleVenture";
 import AleYea from "./components/AleYea";
 import Page404 from "./components/Page404";
+import NavBar from "./components/NavBar";
 
 export default function App() {
   const [flavor, setFlavor] = useState('');
@@ -62,6 +63,7 @@ export default function App() {
 
   return (
     <>
+    <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CraftbeerMe" element={<CraftbeerMe recommendations={recommendations} />} />

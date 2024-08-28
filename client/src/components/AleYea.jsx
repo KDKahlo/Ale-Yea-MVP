@@ -23,32 +23,6 @@ export default function AleYea({ fetchFlavorRecommendations, setError, flavor, e
 
   return (
     <div className="AleYea">
-      {/* Navbar */}
-      <div className="navBar ">
-        <div className = " bg-warning-subtle text-warning-emphasis position-absolute row col-sm-12">
-        <nav className="navbar bg-body-tertiary p-3 mb-2 bg-warning-subtle text-warning-emphasis fixed-top">
-        <div className="container-fluid p-3 mb-2 bg-warning-subtle text-warning-emphasis">
-          <div className="appLogoImg" >
-            <img src="\images\Ale-Yea-Updated-Logo.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
-           </div>
-            <ul className="nav p-3 mb-2 bg-warning-subtle text-warning-emphasis">
-                <li className="">
-                     <Link className="nav-link text-body-tertiary"  to="/">HOME</Link>
-                </li>
-                <li className="nav-item">
-                     <Link className="nav-link text-body-tertiary " to="/AleVenture">ALE-VENTURE!</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link text-body-tertiary" to="/AleYea">ALE-YEA!</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link text-body-tertiary"to="/CraftbeerMe">CRAFTBEER ME!</Link>
-                </li>
-            </ul>
-        </div>
-      </nav> 
-       </div>
-        </div>
 <div className=  "container-flavor-choice-and-title">
       <div className = "header">
       <h1 className="archivo-black-regular">Ale Yea!</h1>
