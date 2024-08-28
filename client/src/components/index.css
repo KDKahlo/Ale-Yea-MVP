@@ -11,6 +11,23 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* SAM CSS UPDATE */
+  /* COLOR SCHEME */
+  --header-bg-color: #fff3cd;
+  --text-color-primary: #664d03;
+  
+  /* TYPOGRAPHY */
+  --primary-font: "Archivo Black", sans-serif;
+  --secondary-font: "Protest Strike", sans-serif;
+
+  --light-weight: 300;
+  --normal-weight: 400;
+  --heavy-weight: 700;
+}
+
+main {
+  height: auto;
 }
 
 a {
@@ -24,8 +41,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
